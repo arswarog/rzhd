@@ -39,12 +39,25 @@ function displayStations(stations) {
 
     stations.forEach(station => {
         const el = template.content.cloneNode(true)
-        
-        console.log(station)
 
         fillTemplate(el, station);
 
-        listEl.appendChild(el);  
+        listEl.appendChild(el);
+    })
+}
+
+function displayRoutes(routes) {
+    const listEl = document.getElementById('route-list')
+    const template = document.getElementById('route-list-item')
+
+    Array.from(listEl.getElementsByTagName('li')).forEach(el => el.remove())
+
+    routes.forEach(route => {
+        const el = template.content.cloneNode(true)
+
+        fillTemplate(el, route);
+
+        listEl.appendChild(el);
     })
 }
 
@@ -61,19 +74,4 @@ function fillTemplate(element, data) {
 }
 
 displayStations(allStations);
-displayStations(allStations);
-displayStations(allStations);
-displayStations(allStations);
-displayStations(allStations);
-
-
-
-
-
-
-
-
-
-
-printNode(document.body);
-
+displayRoutes(allRoutes);

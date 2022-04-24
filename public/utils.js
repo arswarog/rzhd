@@ -36,7 +36,7 @@ let _routeIds = 1
 function createRoute(name, stations) {
     // проверка данных маршрута
     return {
-        id: _routeIds,
+        id: _routeIds++,
         name,
         stations: [...stations],
     }

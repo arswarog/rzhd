@@ -11,19 +11,29 @@
 
 <body>
 
-  <h1>Hello world!</h1>
-
-  <div class="qwe">
-    <h2 id="qwerty" aria-atomic="xdvdsfs">sdfskjdfhk</h2>
-  </div>
-
-  <div>some text</div>
-
 <section class="section">
-  <h3 class="section__title">Станции</h3>
-  <div class="section__content">
+  <div class="section__left-content">
+    <h3 class="section__title">Станции</h3>
+
     <ul class="station-list" id="station-list">
       <template id="station-list-item">
+        <li class="station-list__item">
+          <h4 class="station-list__title" data-source="name">Кисловодск</h4>
+          <div class="station-list__info">
+            <span class="data">
+              <span class="data__name">ID:</span>
+              <span class="data__value" data-source="id">2</span>
+            </span>
+          </div>
+        </li>
+      </template>
+    </ul>
+  </div>
+  <div class="section__right-content">
+    <h3 class="section__title">Маршруты</h3>
+
+    <ul class="station-list" id="route-list">
+      <template id="route-list-item">
         <li class="station-list__item">
           <h4 class="station-list__title" data-source="name">Кисловодск</h4>
           <div class="station-list__info">
