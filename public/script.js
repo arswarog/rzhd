@@ -30,7 +30,10 @@ dataList.forEach(data => {
 })
 
 
-
+/**
+ * 
+ * @param {Station[]} stations 
+ */
 function displayStations(stations) {
     const listEl = document.getElementById('station-list')
     const template = document.getElementById('station-list-item')
@@ -39,6 +42,8 @@ function displayStations(stations) {
 
     stations.forEach(station => {
         const el = template.content.cloneNode(true)
+        const li = el.querySelector('li');
+        li.dataset.stationId = station.id
 
         fillTemplate(el, station);
 
@@ -54,6 +59,8 @@ function displayRoutes(routes) {
 
     routes.forEach(route => {
         const el = template.content.cloneNode(true)
+        const li = el.querySelector('li');
+        li.dataset.routeId = route.id
 
         fillTemplate(el, route);
 
@@ -65,7 +72,6 @@ function fillTemplate(element, data) {
     const source = element.dataset && element.dataset.source
 
     if (source) {
-        console.log(element, source)
         const text = data[source]
         element.innerHTML = text
     }
@@ -75,3 +81,27 @@ function fillTemplate(element, data) {
 
 displayStations(allStations);
 displayRoutes(allRoutes);
+
+function findStationById(stations) {
+    return (stationId) => {
+        return allStations.find(station => station.id === stationId)
+    }
+}
+
+const routeList = document.getElementById('route-list')
+routeList.addEventListener('click', (event) => {
+    const li = event.composedPath().find(el => el.dataset && el.dataset.routeId);
+    if (!li) {
+        return
+    }
+
+    const routeId = +li.dataset.routeId
+
+    const route = allRoutes.find(item => item.id === routeId)
+
+    const stations = route.stations.map(findStationById(allStations))
+
+    console.log(stations)
+
+    displayStations(stations)
+})
