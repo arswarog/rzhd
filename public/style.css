@@ -1,0 +1,45 @@
+body {
+    background-color: #f5f5f5;
+}
+
+/*** section ***/
+
+.section {
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+.section__title {
+    margin: 10px 30px;
+}
+
+/*** station-list ***/
+.station-list {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.station-list__item {
+    display: block;
+    border-radius: 1px;
+    margin: 2px;
+    padding: 5px 20px;
+    border: #e5e5e5 1px solid;
+
+    background-color: #f5f5f5;
+}
+.station-list__title {
+    padding: 0;
+    margin: 10px 0;
+}
+
+/*** data ***/
+.data {
+    display: inline-block;
+}
+.data__name {
+    color: #808080;
+}
+.data__value {
+    color: #404040;
+}
