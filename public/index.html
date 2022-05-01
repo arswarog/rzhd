@@ -11,6 +11,38 @@
 
 <body>
 
+  <form id="form" class="route-search">
+    <div class="route-search__input-box">
+      <input name="src" autocomplete="off">
+      <ul class="route-search__suggest route-search__suggest_open" id="route-search-src-suggest">
+        <li class="route-search__suggest-item" data-source="name">Майкоп</li>
+        <li class="route-search__suggest-item" data-source="name">Краснодар</li>
+        <li class="route-search__suggest-item" data-source="name">Адлер</li>
+      </ul>
+    </div>    
+    <div class="route-search__divider">
+    </div>    
+    <div class="route-search__input-box">
+      <input name="dst" autocomplete="off">
+      <ul class="route-search__suggest" id="route-search-dst-suggest">
+        <li class="route-search__suggest-item" data-source="name">Майкоп</li>
+        <li class="route-search__suggest-item" data-source="name">Краснодар</li>
+        <li class="route-search__suggest-item" data-source="name">Адлер</li>
+      </ul>
+    </div>  
+    <div class="route-search__divider">  
+    </div>    
+    <div class="route-search__submit-box">
+      <button type="submit">
+        ПОИСК
+      </button>
+    </div>    
+    <template id="route-search__suggest-item">
+      <li class="route-search__suggest-item" data-source="name"></li>
+    </template>
+  </form>
+
+
 <section class="section">
   <div class="section__left-content">
     <h3 class="section__title">Станции</h3>

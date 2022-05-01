@@ -105,3 +105,14 @@ routeList.addEventListener('click', (event) => {
 
     displayStations(stations)
 })
+
+const form = document.getElementById('form')
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    const src = form.elements.src.value
+    const dst = form.elements.dst.value
+
+    console.log(src, dst)
+})
